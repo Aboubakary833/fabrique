@@ -1,0 +1,22 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+main {
+    width: 100vw;
+    height: auto;
+    margin-top: 20vh;
+    text-align: center;
+    position: fixed;
+}
+
+main div {
+    width: fit-content;
+    height: fit-content;
+    background: #7de6687e;
+    border: 1px solid #1C9A04;
+    border-radius: 3px;
+    margin: 25px auto;
+    padding: 15px 25px;
+}

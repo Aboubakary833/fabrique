@@ -1,0 +1,116 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+main {
+    width: 90vw;
+    margin: auto;
+    height: auto;
+}
+
+.container {
+    width: 50%;
+    height: auto;
+    padding: 25px;
+    margin: 8% auto;
+    background: linear-gradient(to top right, #FBA81F, #CE0033);
+
+}
+
+.container h1 {transform: translateY(-60%)}
+
+.logo {
+    width: 45%;
+    height: 45%;
+    margin: 0 auto;
+    transform: translateY(-60%);
+}
+
+.logo img {
+    width: inherit;
+    height: inherit;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #CE0033;
+}
+
+form {
+    width: 100%;
+    text-align: right;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+input {
+    width: 50%;
+    height: 37px;
+    border: 1px solid #550015;
+    font-size: 16px;
+    border-radius: 3px;
+    background: transparent;
+    margin-top: 8%;
+    outline: none;
+}
+
+input:first-of-type {margin-top: 0;}
+
+form button[type="submit"] {
+    background: #CE0033;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 12px 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30%;
+    outline: none;
+}
+
+@media(max-width: 1182px) {
+    body {overflow-x: hidden;}
+    .container {width: 70%;}
+}
+
+@media(max-width: 845px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media(max-width: 740px) {
+    .container {
+        width: 90%;
+    }
+
+    form input {
+        width: 40%;
+        height: 35px;
+    }
+}
+
+@media(max-width: 550px) {
+    form {text-align: left;}
+    form input {
+        width: 90%;
+        height: 35px;
+        margin-top: 0;
+        margin-bottom: 25px;
+        margin-left: 10%;
+    }
+}
+
+@media(max-width: 500px) {
+    body {background: linear-gradient(to top right, #FBA81F, #CE0033);}
+    .container {
+        background: none;
+    }
+}
+
+
