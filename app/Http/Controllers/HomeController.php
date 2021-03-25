@@ -22,19 +22,21 @@ class HomeController extends Controller
         foreach ($userReq[0] as $key => $value) {
             $userData[$key] = $value;
         }
-        foreach ($bookingReq[count($bookingReq) - 1] as $key => $value) {
-            $currentBooking[$key] = $value;
-        }
-        $checkData = [
-            $userData['userId'],
-            date('d-M-Y'),
-            $currentBooking['reservationEnd']
+        if(count($bookingReq) - 1 > -1){
+            foreach ($bookingReq[count($bookingReq) - 1] as $key => $value) {
+                $currentBooking[$key] = $value;
+            }
+            $checkData = [
+                $userData['userId'],
+                date('d-M-Y'),
+                $currentBooking['reservationEnd']
 
-        ];
-        $bookingNum = DB::select('select * from reservations where reservationConfigKey = ?', [$currentBooking['reservationConfigId']]);
+            ];
+            $bookingNum = DB::select('select * from reservations where reservationConfigKey = ?', [$currentBooking['reservationConfigId']]);
 
-        $check = DB::select('select * from reservations where reservationAuthor = ? and (reservationEnd between ? and ?)', $checkData);
-        return view('pages/home')->with('infos', [$check, $bookingNum]);
+            $check = DB::select('select * from reservations where reservationAuthor = ? and (reservationEnd between ? and ?)', $checkData);
+            return view('pages/home')->with('infos', [$check, $bookingNum]);
+        } else return view('pages.home');
     }
 
     public function logout(Request $request) {
@@ -62,6 +64,7 @@ class HomeController extends Controller
             'no'
         ];
         DB::insert('insert into reservations (reservationAuthor, reservationConfigKey, reservationBegin, reservationEnd, isValidated) values (?, ?, ?, ?, ?)', $reservationData);
+        return redirect('/home');
     }
 
     public function todayBooking(Request $request) {

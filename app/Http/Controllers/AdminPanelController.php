@@ -92,7 +92,7 @@ class AdminPanelController extends Controller
 
         $reservationTotal = $request->input('reservationTotal');
         $reservationEnd = $request->input('reservationEnd');
-        DB::insert('insert into reservation_configs (reservationNum, reservationTotal, reservationBegin, reservationEnd) values (0, ?, CURDATE(), ?)', [$reservationTotal, $reservationEnd]);
+        DB::insert('insert into reservation_configs (reservationTotal, reservationBegin, reservationEnd) values (?, CURDATE(), ?)', [$reservationTotal, $reservationEnd]);
         return redirect('/admin');
     }
 

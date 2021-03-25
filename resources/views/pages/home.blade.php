@@ -15,18 +15,21 @@
         </div>
     </header>
     <main>
-        <p>Le nombre daccès disponible est de {{ count($infos[1]) }}</p>
+        <p>Le nombre daccès disponible est de {{ isset($infos) ? count($infos[1]) : 0 }}</p>
         <div>
             <p>Du Lundi au Vendredi entre <span>17 HEURES</span> et <span>20 HEURES</span></p>
             <p>Du Samedi au Dimanche entre <span>9 HEURES</span> et <span>20 HEURES</span></p>
         </div>
         <div>
-            @if (count($infos[0]))
+            @if (isset($infos))
+                @if (count($infos[0]))
                 <h1>Vous avez déja reservé un accès!</h1>
-            @else
-                <a href="/weekBooking">Réserver l'accès pour 7 jours</a>
-                <a href="/todayBooking">Reserver l'accès pour aujourd'hui</a>
+                @else
+                    <a href="/weekBooking">Réserver l'accès pour 7 jours</a>
+                    <a href="/todayBooking">Reserver l'accès pour aujourd'hui</a>
+                @endif
             @endif
+
         </div>
     </main>
     <footer>
