@@ -7,6 +7,7 @@ header {
     width: 100vw;
     height: 100px;
     position: fixed;
+    top: 0;
     left: 0;
 }
 
@@ -41,10 +42,9 @@ header {
 }
 
 main {
-    width: 100vw;
+    width: 98vw;
     height: auto;
-    margin-top: 30vh;
-    position: fixed;
+    margin: 25vh auto;
 }
 
 main > p {
@@ -57,36 +57,59 @@ main > p {
     border-radius: 5px;
 }
 
-main div {
-    width: fit-content;
+main form {margin-top: 5vh;}
+
+main form div {
+    width: 30%;
     height: fit-content;
-    margin: 10vh auto;
-}
-
-main div p span {font-weight: 500;}
-
-main div a {
-    padding: 10px 25px;
     margin: auto;
-    color: #fff;
-    background: #CE0033;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px #707070;
+    padding: 25px;
 }
+
+main form div .jour, .date, .hours {
+    font-size: large;
+    font-weight: 500;
+}
+
+main form div input {
+    width: 2vw;
+    height: 2vh;
+}
+
+main form button[type="submit"] {
+    margin-top: 8vh;
+    padding: 1.7vh 3vw;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: #CE0033;
+    box-shadow: 0 2px 3px #ddd;
+}
+
+main form div:nth-child(odd) { background: #eee;}
 
 footer {
     width: 100%;
     height: auto;
-    position: fixed;
     text-align: center;
     color: #707070;
     font-weight: 500;
-    bottom: 0;
-    left: 0;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0.7vw;
+    background: #ce003433;
+}
+::-webkit-scrollbar-thumb {
+    width: inherit;
+    height: auto;
+    background: #CE0033;
+    border: none;
+    border-radius: 5px;
 }
 
 @media(max-width: 500px) {

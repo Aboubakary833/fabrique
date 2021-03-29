@@ -5,7 +5,7 @@ const reservation = $('.reservation');
 const bookers = $('.bookers');
 const subscribers = $('.subscribers');
 const target = $('#target');
-
+const reservConfig = $('.reservConfig');
 //Newbies button click event
 
 window.onload = () => {
@@ -27,6 +27,7 @@ newbies.addEventListener('click', (e) => {
     el.classList.add('active');
     if(reservation.classList.value.includes('active')) reservation.classList.remove('active');
     else if(bookers.classList.value.includes('active')) bookers.classList.remove('active');
+    else if(reservConfig.classList.value.includes('active')) reservConfig.classList.remove('active');
     else if(subscribers.classList.value.includes('active')) subscribers.classList.remove('active');
     fetch('/admin/newbies', {
         method: 'get',
@@ -43,6 +44,7 @@ reservation.addEventListener('click', (e) => {
     const el = e.target;
     el.classList.add('active');
     if(newbies.classList.value.includes('active')) newbies.classList.remove('active');
+    else if(reservConfig.classList.value.includes('active')) reservConfig.classList.remove('active');
     else if(bookers.classList.value.includes('active')) bookers.classList.remove('active');
     else if(subscribers.classList.value.includes('active')) subscribers.classList.remove('active');
     fetch('/admin/reservations', {
@@ -61,6 +63,7 @@ bookers.addEventListener('click', (e) => {
     el.classList.add('active');
     if(newbies.classList.value.includes('active')) newbies.classList.remove('active');
     else if(reservation.classList.value.includes('active')) reservation.classList.remove('active');
+    else if(reservConfig.classList.value.includes('active')) reservConfig.classList.remove('active');
     else if(subscribers.classList.value.includes('active')) subscribers.classList.remove('active');
     fetch('/admin/bookers', {
         method: 'get',
@@ -78,6 +81,7 @@ subscribers.addEventListener('click', (e) => {
     el.classList.add('active');
     if(newbies.classList.value.includes('active')) newbies.classList.remove('active');
     else if(bookers.classList.value.includes('active')) bookers.classList.remove('active');
+    else if(reservConfig.classList.value.includes('active')) reservConfig.classList.remove('active');
     else if(reservation.classList.value.includes('active')) reservation.classList.remove('active');
     fetch('/admin/subscribers', {
         method: 'get',
@@ -88,3 +92,22 @@ subscribers.addEventListener('click', (e) => {
         target.innerHTML = data;
     }))
 });
+
+    reservConfig.addEventListener('click', (e) => {
+        target.innerHTML = 'chargement...';
+        const el = e.target;
+        el.classList.add('active');
+        if(newbies.classList.value.includes('active')) newbies.classList.remove('active');
+        else if(bookers.classList.value.includes('active')) bookers.classList.remove('active');
+        else if(reservation.classList.value.includes('active')) reservation.classList.remove('active');
+        else if(subscribers.classList.value.includes('active')) subscribers.classList.remove('active');
+        fetch('/reservationConfig', {
+            method: 'get',
+            headers: {'Content-type': 'text/html'}
+        })
+        .then(res => res.text()
+        .then(data => {
+            target.innerHTML = data;
+        }))
+    });
+

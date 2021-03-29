@@ -18,6 +18,7 @@ class CreateReservationConfigsTable extends Migration
             $table->integer('reservationNum');
             $table->date('reservationBegin');
             $table->date('reservationEnd');
+            $table->json('reservationPeriod');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@
         <div class="form">
             <h1>Connexion</h1>
             @error('email')
-                Erreur!
+                <strong id="error">Email ou mot de passe incorrect!</strong>
             @enderror
             <form action="/" method="POST">
             @csrf
@@ -29,8 +29,24 @@
             </form>
             <div class="form_subLinks">
                 <a href="{{ route('toResetPasswordPage') }}">Mot de passe oublié?</a>
-                <a href="{{ route('register') }}">S'inscrire</a>
+                <a href="{{ route('register') }}">Sinscrire</a>
             </div>
         </div>
     </main>
+    <script type="text/javascript">
+        const email = document.querySelector('input[type="email"]');
+        const password = document.querySelector('input[type="password"]');
+        email.addEventListener('focus', function() {
+            this.parentNode.style.boxShadow = '0 0 0 3px rgba(0, 0, 0, 0.5)';
+        });
+        password.addEventListener('focus', function() {
+            this.parentNode.style.boxShadow = '0 0 0 3px rgba(0, 0, 0, 0.5)';
+        });
+        email.addEventListener('blur', function() {
+            this.parentNode.style.boxShadow = 'none';
+        });
+        password.addEventListener('blur', function() {
+            this.parentNode.style.boxShadow = 'none';
+        })
+    </script>
 @endsection

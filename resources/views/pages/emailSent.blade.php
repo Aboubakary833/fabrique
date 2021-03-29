@@ -13,6 +13,9 @@
             height: auto;
             margin-top: 30vh;
             position: fixed;
+            padding: 15px;
+            background: rgba(68, 238, 42, .35);
+            border: 1px solid #2ddb0a;
         }
     </style>
 @endsection

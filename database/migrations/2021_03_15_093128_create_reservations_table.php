@@ -17,6 +17,9 @@ class CreateReservationsTable extends Migration
             $table->id('reservationId');
             $table->integer('reservationAuthor', 60);
             $table->integer('reservationConfigKey');
+            $table->json('userReservationPeriod');
+            $table->date('reservationEnd');
+            $table->string('isValidated', 5);
             $table->timestamps();
         });
     }

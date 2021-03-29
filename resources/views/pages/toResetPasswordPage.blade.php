@@ -10,11 +10,18 @@
         }
 
         main {
-            width: 90vw;
-            margin: auto;
-            height: auto;
-        }
+            width: 40vw;
+            height: fit-content;
+            background: rgb(245, 245, 245);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 25vh auto;
+            padding: 5vh;
+            box-shadow: 0 3px 10px #ddd;
+            }
         form {
+            width: inherit;
+            height: auto;
             margin-top: 10%
         }
 
@@ -25,9 +32,9 @@
         }
 
         input {
-            width: 40%;
+            width: 60%;
             height: 40px;
-            border: 1px solid #ddd;
+            border: 1px solid #707070;
             font-size: 16px;
             margin-top: 20px;
             border-radius: 3px;
@@ -47,13 +54,29 @@
             margin-top: 2%;
             outline: none;
         }
+
+        footer {
+            width: 100%;
+            height: auto;
+            position: fixed;
+            text-align: center;
+            color: #707070;
+            font-weight: 500;
+            bottom: 0;
+            left: 0;
+        }
     </style>
 @endsection
 @section('content')
-    <form action="/toResetPasswordPage" method="POST">
-        @csrf
-        <label for="email">Entrez votre email : </label><br>
-        <input type="email" name="email" id="email" placeholder="exemple@gmail.com"><br>
-        <button type="submit">Envoyer</button>
-    </form>
+    <main>
+        <form action="/toResetPasswordPage" method="POST">
+            @csrf
+            <label for="email">Entrez votre email : </label><br>
+            <input type="email" name="email" id="email" placeholder="exemple@gmail.com"><br>
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; Copyright - 2021</p>
+    </footer>
 @endsection

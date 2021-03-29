@@ -10,6 +10,7 @@ use App\Mail\passwordResetMail;
 
 class LoginController extends Controller
 {
+    protected $email;
     public function index() {
         return view('index');
     }
@@ -45,12 +46,12 @@ class LoginController extends Controller
         $code_is_correct = isset($code) && $code == "x46azrz45e";
         $emailIsSet = isset($email);
         if($code_is_correct && $emailIsSet) {
-            return view('pages.renitializeForm');
+            return view('pages.renitializeForm')->with('email', $email);
         }
 
     }
-    public function resetPassword($email, Request $request) {
-        DB::update('update users set password = ? where email = ?', [bcrypt($request->input('password')), $email]);
+    public function resetPassword(Request $request) {
+        DB::update('update users set password = ? where email = ?', [bcrypt($request->input('password')), $request->input('email')]);
         return redirect('/');
     }
 }

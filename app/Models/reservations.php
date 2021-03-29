@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class reservations extends Model
+class Reservations extends Model
 {
     use HasFactory;
+    protected $fillable = ['reservationAuthor', 'reservationConfigKey', 'userReservationPeriod', 'reservationEnd', 'isValidated'];
 }

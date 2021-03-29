@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ReservationConfig extends Model
 {
     use HasFactory;
+    protected $fillable = ['reservationTotal', 'reservationBegin', 'reservationEnd', 'reservationPeriod'];
 }

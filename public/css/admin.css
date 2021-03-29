@@ -3,10 +3,13 @@
     text-align: center;
 }
 
+
 header {
     width: 100vw;
     height: 100px;
     position: fixed;
+
+    top: 0;
     left: 0;
     z-index: 1;
 }
@@ -42,10 +45,10 @@ header {
 }
 
 main {
-    width: 100vw;
+    width: 98vw;
     height: auto;
     margin-top: 20vh;
-    position: fixed;
+    position: absolute;
 }
 
 .nav {
@@ -70,7 +73,7 @@ main {
     cursor: pointer;
 }
 
-.nav div:nth-child(1), .nav div:nth-child(2), .nav div:nth-child(3) {border-right: 2px solid #921212;}
+.nav div:nth-child(1), .nav div:nth-child(2), .nav div:nth-child(3), .nav div:nth-child(4) {border-right: 2px solid #921212;}
 
 .newbies {
     border-top-left-radius: 5px;
@@ -219,27 +222,136 @@ main {
     color: #921212;
 }
 
-.reserve_form h1 {
-    color: #921212;
+.reservartionConfig {
+    width: 50%;
+    height: auto;
+    margin: 10vh auto;
+    padding: 10px;
+    background: none;
+    display: block;
 }
 
-.reserve_form form input {
-    width: 22%;
+.reservationHeader {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 10px;
+    background: none;
+}
+
+.bloc_1 {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+.bloc_1 span {
+    font-size: 19px;
+    font-weight: 500;
+    color: #CE0033;
+}
+
+.bloc_1 span:last-child {margin-left: 2vw;}
+
+.bloc_2 {
+    width: 50%;
+    height: auto;
+    text-align: center;
+}
+
+.bloc_2 span {
+    font-size: 21px;
+    font-weight: 500;
+    color: #CE0033;
+    text-align: center;
+}
+
+.bloc_2 span:last-child {margin-left: 2vw;}
+
+form {
+    width: 100%;
+    height: auto;
+}
+
+.form_bloc {
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin: auto;
+}
+
+.day_date {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: right;
+}
+
+.day_date label {
+    margin-left: 2vw;
+    font-weight: 500;
+}
+
+.day_date span {font-weight: 500;}
+
+.begin_end {
+    width: 50%;
+    height: auto;
+    margin-left: 5vw;
+    display: flex;
+    justify-content: right;
+}
+
+.begin_end input {
+    width: 10vw;
     height: 30px;
-    border: 1px solid #921212;
-    margin-top: 25px;
+    border: 1px solid #ddd;
 }
 
-.reserve_form form button {
+.begin_end #openHour {
+    margin-left: 5vw;
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+form label[for="amount"] {font-weight: 500;}
+
+form input[type="number"] {
+    width: auto;
+    height: 35px;
+    font-size: large;
+    outline: none;
+    border: 1.5px solid #ddd;
+    border-radius: 3px;
+    margin-top: 2vh;
+}
+
+form button {
     width: fit-content;
     height: fit-content;
+    margin: 5vh auto;
+    padding: 11px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
     border: none;
     outline: none;
     border-radius: 3px;
     background: #CE0033;
-    color: #fff;
-    font-size: 17px;
-    font-weight: 500;
-    margin-top: 30px;
-    padding: 10px 15px;
+    box-shadow: 0 1px 3px #ddd;
+}
+
+@media(min-width: 900px) {
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 0.7vw;
+        background: #ce003433;
+    }
+    ::-webkit-scrollbar-thumb {
+        width: inherit;
+        height: auto;
+        background: #CE0033;
+        border: none;
+        border-radius: 5px;
+    }
 }

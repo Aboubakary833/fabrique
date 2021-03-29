@@ -20,7 +20,8 @@ main {
 .simplon-img img {
     width: 25%;
     position: fixed;
-    left: 18%;
+    left: 12%;
+    bottom: 43%;
 }
 
 .form {
@@ -40,6 +41,7 @@ main {
 .custom_inp {
     width: 50%;
     height: 22px;
+    background: none;
     display: flex;
     justify-content: space-between;
     border: 1px solid rgba(0, 0, 0, 0.5);
@@ -47,6 +49,7 @@ main {
     margin-top: 30px;
     margin-left: 22%;
     padding: 10px;
+    transition: box-shadow .5s;
 }
 
 .custom_inp img {
@@ -59,17 +62,13 @@ main {
 .custom_inp input {
     width: 80%;
     height: 32px;
-    background: transparent;
+    background: none;
     font-size: 16px;
     transform: translate(0px, -6px);
     border: none;
     outline: none;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
-}
-
-.custom_inp input:focus {
-    background: transparent;
 }
 
 .form form button[type='submit'] {
@@ -165,4 +164,10 @@ main {
 @media(max-width: 630px) {
     body {background: linear-gradient(to right,#ee0e46, tomato);}
     main {background-image: none;}
+}
+
+strong#error {
+    padding: 10px;
+    background: #7070702c;
+    border-radius: 3px;
 }
